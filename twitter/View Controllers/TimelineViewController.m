@@ -11,9 +11,10 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "TweetCell.h"
-#import "Tweet.h"
+#import "UIImageView+AFNetworking.h"
+#import "ComposeViewController.h"
 
-@interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray *arrayOfTweets;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -91,15 +92,15 @@
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    UINavigationController *navigationController = [segue destinationViewController];
+    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+    composeController.delegate = self;
 }
-*/
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -110,24 +111,31 @@
     
     cell.tweet = currentTweet;
     
-    NSString *URLString = currentTweet.user.profilePicture;
+    NSString *URLString = cell.tweet.user.profilePicture;
     NSURL *url = [NSURL URLWithString:URLString];
-    NSData *urlData = [NSData dataWithContentsOfURL:url];
-    cell.profileImage.image = [UIImage imageWithData:urlData];
+    //NSData *urlData = [NSData dataWithContentsOfURL:url];
+    [cell.profileImage setImageWithURL:url];
     
     cell.name.text = cell.tweet.user.name;
     cell.username.text = cell.tweet.user.screenName;
     cell.date.text = cell.tweet.createdAtString;
     cell.tweetText.text = cell.tweet.text;
     cell.replyCount.text = @"0"; //no reply functionality
-    cell.retweetCount.text = @"cell.tweet.retweetCount";
-    cell.likeCount.text = @"cell.tweet.favoriteCount";
+    cell.retweetButton.selected = cell.tweet.retweeted;
+    cell.retweetCount.text = [NSString stringWithFormat:@"%d", cell.tweet.retweetCount];
+    cell.likeButton.selected = cell.tweet.favorited;
+    cell.likeCount.text = [NSString stringWithFormat:@"%d", cell.tweet.favoriteCount];
 
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 20;
+}
+
+- (void)didTweet:(nonnull Tweet *)tweet {
+    [self.arrayOfTweets insertObject:tweet atIndex:0];
+    [self.tableView reloadData];
 }
 
 @end
