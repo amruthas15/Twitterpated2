@@ -7,6 +7,7 @@
 //
 
 #import "Tweet.h"
+#import "DateTools.h"
 
 @implementation Tweet
 
@@ -24,7 +25,7 @@
              dictionary = originalTweet;
          }
          self.idStr = dictionary[@"id_str"];
-         self.text = dictionary[@"text"];
+         self.text = dictionary[@"full_text"];
          self.favoriteCount = [dictionary[@"favorite_count"] intValue];
          self.favorited = [dictionary[@"favorited"] boolValue];
          self.retweetCount = [dictionary[@"retweet_count"] intValue];
@@ -42,12 +43,14 @@
          // Configure the input format to parse the date string
          formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
          // Convert String to Date
-         NSDate *date = [formatter dateFromString:createdAtOriginalString];
+         NSDate *tweetDate = [formatter dateFromString:createdAtOriginalString];
+         NSDate *currentDate = [[NSDate alloc] init];
+         NSString *timeDiff = [tweetDate shortTimeAgoSinceNow];
          // Configure output format
          formatter.dateStyle = NSDateFormatterShortStyle;
-         formatter.timeStyle = NSDateFormatterNoStyle;
+         formatter.timeStyle = NSDateFormatterShortStyle;
          // Convert Date to String
-         self.createdAtString = [formatter stringFromDate:date];
+         self.createdAtString = timeDiff;
      }
      return self;
  }

@@ -100,7 +100,7 @@
     [self.profileImage setImageWithURL:url];
     
     self.name.text = self.tweet.user.name;
-    self.username.text = self.tweet.user.screenName;
+    self.username.text = [@"@" stringByAppendingString:self.tweet.user.screenName];
     self.date.text = self.tweet.createdAtString;
     self.tweetText.text = self.tweet.text;
     self.replyCount.text = @"0"; //no reply functionality

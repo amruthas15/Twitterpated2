@@ -117,7 +117,7 @@
     [cell.profileImage setImageWithURL:url];
     
     cell.name.text = cell.tweet.user.name;
-    cell.username.text = cell.tweet.user.screenName;
+    cell.username.text = [@"@" stringByAppendingString:cell.tweet.user.screenName];
     cell.date.text = cell.tweet.createdAtString;
     cell.tweetText.text = cell.tweet.text;
     cell.replyCount.text = @"0"; //no reply functionality
@@ -130,7 +130,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.arrayOfTweets.count;
 }
 
 - (void)didTweet:(nonnull Tweet *)tweet {
