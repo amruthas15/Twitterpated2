@@ -44,7 +44,6 @@
          formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
          // Convert String to Date
          NSDate *tweetDate = [formatter dateFromString:createdAtOriginalString];
-         NSDate *currentDate = [[NSDate alloc] init];
          NSString *timeDiff = [tweetDate shortTimeAgoSinceNow];
          // Configure output format
          formatter.dateStyle = NSDateFormatterShortStyle;

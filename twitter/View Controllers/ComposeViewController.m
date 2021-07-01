@@ -30,6 +30,7 @@
     [[APIManager shared] postStatusWithText:self.textView.text completion:^(Tweet *tweet, NSError *error) {
         if (error == nil) {
             NSLog(@"😎😎😎 Successfully posted tweet");
+            tweet.text = self.textView.text;
             [self.delegate didTweet:tweet];
             [self dismissViewControllerAnimated:true completion:nil];
         } else {
