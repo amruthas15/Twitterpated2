@@ -15,10 +15,11 @@
 #import "ComposeViewController.h"
 #import "DetailsViewController.h"
 
-@interface TimelineViewController () <ComposeViewControllerDelegate, DetailsViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface TimelineViewController () <DetailsViewControllerDelegate, ComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray *arrayOfTweets;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end
 
@@ -102,6 +103,7 @@
     if([sender isKindOfClass:[UITableViewCell class]])
     {
         DetailsViewController *detailsViewController = (DetailsViewController*)navigationController.topViewController;
+        detailsViewController.delegate = self;
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
         Tweet *tweet = self.arrayOfTweets[indexPath.row];
@@ -150,9 +152,9 @@
     [self.tableView reloadData];
 }
 
-- (void)didUpdate:(nonnull Tweet *)tweet {
+-(void)didUpdate: (nonnull Tweet *)tweet {
     int index = [self.arrayOfTweets indexOfObject:tweet];
-    [self.arrayOfTweets insertObject:tweet atIndex:index];
+    [self.arrayOfTweets replaceObjectAtIndex:index withObject:tweet ];
     [self.tableView reloadData];
 }
 

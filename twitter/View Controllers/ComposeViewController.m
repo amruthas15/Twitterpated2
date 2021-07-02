@@ -9,8 +9,10 @@
 #import "ComposeViewController.h"
 #import "APIManager.h"
 
-@interface ComposeViewController ()
+@interface ComposeViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UILabel *remainingCount;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *tweetButton;
 
 @end
 
@@ -19,6 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.textView.layer.borderWidth = 3;
+    self.textView.clipsToBounds = YES;
+    self.textView.layer.cornerRadius = 10.0f;
+    self.textView.layer.borderColor = [UIColor colorWithRed:0.11 green:0.63 blue:0.95 alpha:1.00].CGColor;
+    self.textView.delegate = self;
 }
 
 - (IBAction)closeButtonClicked:(UIBarButtonItem *)sender {
@@ -37,6 +44,24 @@
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
     }];
+}
+
+-(void)textViewDidChange:(UITextView *)textView {
+    int remaining = 280 - textView.text.length;
+    if(remaining < 0)
+    {
+        self.remainingCount.textColor = UIColor.redColor;
+        self.remainingCount.text = [[@(-1 * remaining) stringValue] stringByAppendingString:@" Characters Over Limit"];
+        self.tweetButton.enabled = FALSE;
+        self.textView.layer.borderColor = UIColor.grayColor.CGColor;
+    }
+    else
+    {
+        self.remainingCount.textColor = UIColor.blackColor;
+        self.textView.layer.borderColor = [UIColor colorWithRed:0.11 green:0.63 blue:0.95 alpha:1.00].CGColor;
+        self.remainingCount.text = [[@(remaining) stringValue] stringByAppendingString:@" Characters Remaining"];
+        self.tweetButton.enabled = TRUE;
+    }
 }
 
 /*

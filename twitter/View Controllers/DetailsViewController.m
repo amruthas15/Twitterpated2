@@ -57,7 +57,6 @@
                   NSLog(@"Error retweeting tweet: %@", error.localizedDescription);
              }
              else{
-                 [self.delegate didUpdate:self.tweet];
                  NSLog(@"Successfully retweeted the following Tweet: %@", tweet.text);
              }
          }];
@@ -73,7 +72,6 @@
                   NSLog(@"Error unretweeting tweet: %@", error.localizedDescription);
              }
              else{
-                 [self.delegate didUpdate:self.tweet];
                  NSLog(@"Successfully unretweeted the following Tweet: %@", tweet.text);
              }
          }];
@@ -93,7 +91,6 @@
                 
             }
             else{
-                [self.delegate didUpdate:self.tweet];
                 NSLog(@"Successfully favorited the following Tweet: %@", tweet.text);
             }
         }];
@@ -110,7 +107,7 @@
                 
             }
             else{
-                [self.delegate didUpdate:self.tweet];
+                
                 NSLog(@"Successfully unfavorited the following Tweet: %@", tweet.text);
             }
         }];
@@ -134,10 +131,10 @@
     self.likeCount.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
 }
 
-- (IBAction)didTapBack:(UIBarButtonItem *)sender {
+- (IBAction)didTapBack:(UIButton *)sender {
+    [self.delegate didUpdate:self.tweet];
     [self dismissViewControllerAnimated:true completion:nil];
 }
-
 
 /*
 #pragma mark - Navigation

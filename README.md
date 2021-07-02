@@ -2,7 +2,7 @@
 
 Twitterpated is a basic twitter app to read and compose tweets using the [Twitter API](https://apps.twitter.com/).
 
-Time spent: 15 hours spent in total
+Time spent: 20 hours spent in total
 
 ## User Stories
 
@@ -18,7 +18,7 @@ The following **required** functionality is completed:
 - [X] User can compose a new tweet by tapping on a compose button.
 - [X] Using AutoLayout, the Tweet cell should adjust its layout for iPhone 11, Pro and SE device sizes as well as accommodate device rotation.
 - [X] User should display the relative timestamp for each tweet "8m", "7h"
-- [ ] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet and favorite.
+- [X] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet and favorite.
 
 The following **optional** features are implemented:
 
@@ -32,7 +32,7 @@ The following **optional** features are implemented:
   - Contains the user header view: picture and tagline
   - Contains a section with the users basic stats: # tweets, # following, # followers
 - [ ] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
-- [ ] When composing, you should have a countdown for the number of characters remaining for the tweet (out of 280) (**1 point**)
+- [X] When composing, you should have a countdown for the number of characters remaining for the tweet (out of 280) (**1 point**)
 - [ ] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network.
 - [ ] User can reply to any tweet, and replies should be prefixed with the username and the reply_id should be set when posting the tweet (**2 points**)
 - [ ] User sees embedded images in tweet if available
@@ -42,7 +42,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [X] Countdown for characters in compose page disables tweeting option if the tweet exceeds the 280 character limit and offers visual cues to user that they should reduce their character count
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -53,13 +53,17 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/kd5MpWf.gif' title='Video Walkthrough Pt.1' width='' alt='Video Walkthrough Pt.1' /> Link to Video Walkthrough gif also at https://imgur.com/a/kd5MpWf.gif
+
+<img src='https://imgur.com/a/2yqmboo.gif' title='Video Walkthrough Pt.2' width='' alt='Video Walkthrough Pt.2' /> Link to Video Walkthrough gif also at https://imgur.com/a/2yqmboo.gif
 
 GIF created with [Kap](https://getkap.co/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+It was difficult to understand the delegate concept, but walking through it in class with the added metaphors and examples really helped me understand the concept better.
 
 ## Credits
 
