@@ -53,9 +53,11 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/a/kd5MpWf.gif' title='Video Walkthrough Pt.1' width='' alt='Video Walkthrough Pt.1' /> Link to Video Walkthrough gif also at https://imgur.com/a/kd5MpWf.gif
+<img src='https://imgur.com/a/KCA3lNp.gif' title='Video Walkthrough Pt.1: logging in and out and retweeting/liking functionality' width='' alt='Video Walkthrough Pt.1' /> Link to Video Walkthrough gif also at https://imgur.com/a/KCA3lNp.gif
 
-<img src='https://imgur.com/a/2yqmboo.gif' title='Video Walkthrough Pt.2' width='' alt='Video Walkthrough Pt.2' /> Link to Video Walkthrough gif also at https://imgur.com/a/2yqmboo.gif
+<img src='https://imgur.com/a/JGgQnza.gif' title='Video Walkthrough Pt.2: pull to refresh and compose features' width='' alt='Video Walkthrough Pt.2' /> Link to Video Walkthrough gif also at https://imgur.com/a/JGgQnza.gif
+
+<img src='https://imgur.com/a/qFK7y3z.gif' title='Video Walkthrough Pt.3: Autolayout comparisons' width='' alt='Video Walkthrough Pt.3' /> Link to Video Walkthrough gif also at https://imgur.com/a/qFK7y3z.gif
 
 GIF created with [Kap](https://getkap.co/).
 
@@ -63,7 +65,7 @@ GIF created with [Kap](https://getkap.co/).
 
 Describe any challenges encountered while building the app.
 
-It was difficult to understand the delegate concept, but walking through it in class with the added metaphors and examples really helped me understand the concept better.
+It was difficult to understand the delegate concept, but walking through it in class with the added metaphors and examples really helped me understand the concept better. I had to redo parts of the autolayout section a few times to fully understand it because of its complexity, but I figured it out in the end.
 
 ## Credits
 
