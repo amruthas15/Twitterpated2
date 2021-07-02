@@ -53,11 +53,11 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/a/KCA3lNp.gif' title='Video Walkthrough Pt.1: logging in and out and retweeting/liking functionality' width='' alt='Video Walkthrough Pt.1' /> Link to Video Walkthrough gif also at https://imgur.com/a/KCA3lNp.gif
+<img src='https://imgur.com/a/KCA3lNp.gif' title='Video Walkthrough Pt.1' width='' alt='Video Walkthrough Pt.1: logging in and out and retweeting/liking functionality' /> Link to Video Walkthrough gif also at https://imgur.com/a/KCA3lNp.gif
 
-<img src='https://imgur.com/a/JGgQnza.gif' title='Video Walkthrough Pt.2: pull to refresh and compose features' width='' alt='Video Walkthrough Pt.2' /> Link to Video Walkthrough gif also at https://imgur.com/a/JGgQnza.gif
+<img src='https://imgur.com/a/JGgQnza.gif' title='Video Walkthrough Pt.2' width='' alt='Video Walkthrough Pt.2: pull to refresh and compose features' /> Link to Video Walkthrough gif also at https://imgur.com/a/JGgQnza.gif
 
-<img src='https://imgur.com/a/qFK7y3z.gif' title='Video Walkthrough Pt.3: Autolayout comparisons' width='' alt='Video Walkthrough Pt.3' /> Link to Video Walkthrough gif also at https://imgur.com/a/qFK7y3z.gif
+<img src='https://imgur.com/a/qFK7y3z.gif' title='Video Walkthrough Pt.3' width='' alt='Video Walkthrough Pt.3: Autolayout comparisons' /> Link to Video Walkthrough gif also at https://imgur.com/a/qFK7y3z.gif
 
 GIF created with [Kap](https://getkap.co/).
 
